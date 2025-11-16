@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gear - Yearbook Data System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Privacy & Data Notice</h2>
+            <p>
+                Welcome, students! Before you begin, please be aware that you are about to submit personal information (such as your name, program, and family details).
+            </p>
+            <p>
+                <strong>How will your data be used?</strong>
+                This information is collected for the <strong>sole purpose</strong> of creating and publishing "The Gear," the official university yearbook.
+            </p>
+            <p>
+                Your data will be kept secure and will only be accessible to the authorized yearbook staff and our adviser. It will not be shared with any third parties.
+            </p>
+            <p>
+                <em>By clicking "I Understand," you give your consent for your data to be collected and used for the yearbook.</em>
+            </p>
+            <button id="modal-accept-btn" class="btn btn-primary">I Understand</button>
+        </div>
+    </div>
+    <main>
+        <div class="container" id="form-container">
+            <header>
+                <img src="splash_logo.png" alt="Logo" class="header-logo">
+                <h1>THE GEAR</h1>
+                <p>The Official Yearbook of the University of Southern Mindanao–Kidapawan City Campus</p>
+            </header>
+
+            <form id="yearbook-form">
+                <div class="form-grid">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                            <small>Last Name, First Name, Middle Name --- (Dela Cruz, Juan Abraham)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program">Program:</label>
+                            <div class="program-wrapper">
+                                <select id="program" name="program" required>
+                                    <option value="">-- Select your program --</option>
+                                </select>
+                                <img src="" alt="College Logo" id="program-logo" class="program-logo">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Birthday:</label>
+                            <div class="birthday-grid">
+                                <select id="b_month" name="b_month" required>
+                                    <option value="">Month</option>
+                                </select>
+                                <select id="b_day" name="b_day" required>
+                                    <option value="">Day</option>
+                                </select>
+                                <select id="b_year" name="b_year" required>
+                                    <option value="">Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" name="address">
+                            <small>Barangay, Municipality, Province</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fathersName">Father's Name:</label>
+                            <input type="text" id="fathersName" name="fathersName">
+                            <small>FIRST NAME MIDDLE NAME LAST NAME</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mothersName">Mother's Name:</label>
+                            <input type="text" id="mothersName" name="mothersName">
+                            <small>FIRST NAME MIDDLE NAME LAST NAME</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="spousesName">Spouse's Name:</label>
+                            <input type="text" id="spousesName" name="spousesName">
+                            <small>Spouse's full maiden name (if applicable)</small>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="thesis">Thesis/Project:</label>
+                            <input type="text" id="thesis" name="thesis">
+                            <small>Title will be automatically italicized.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ojt1">OJT/Internship 1:</label>
+                            <input type="text" id="ojt1" name="ojt1">
+                        </div>
+                        <div class="form-group">
+                            <label for="ojt2">OJT/Internship 2:</label>
+                            <input type="text" id="ojt2" name="ojt2">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Organizations:</label>
+                            <small>Format: Position, S.Y.; Member, S.Y.: Org Name</small>
+                            <input type="text" id="org1" name="org1" placeholder="Organization 1">
+                            <input type="text" id="org2" name="org2" placeholder="Organization 2">
+                            <input type="text" id="org3" name="org3" placeholder="Organization 3">
+                            <input type="text" id="org4" name="org4" placeholder="Organization 4">
+                            <input type="text" id="org5" name="org5" placeholder="Organization 5">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Awards:</label>
+                            <small>Format: Award: Competition, Year</small>
+                            <input type="text" id="award1" name="award1" placeholder="Award 1">
+                            <input type="text" id="award2" name="award2" placeholder="Award 2">
+                            <input type="text" id="award3" name="award3" placeholder="Award 3">
+                            <input type="text" id="award4" name="award4" placeholder="Award 4">
+                            <input type="text" id="award5" name="award5" placeholder="Award 5">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <div class="form-group">
+                        <label for="guidingPrinciple">Guiding Principle:</label>
+                        <textarea id="guidingPrinciple" name="guidingPrinciple"></textarea>
+                        <small>Use em dash (—) for quotes.</small>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Review & Save</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="container" id="review-container" style="display:none;">
+            <header>
+                <h1 class="review-header">FINAL REVIEW - CHECK SPELLING</h1>
+                <p>Please carefully check your details below. If everything is correct, click 'Confirm & Submit'.</p>
+            </header>
+            <div id="review-content" class="review-grid">
+            </div>
+            <div class="review-buttons">
+                <button id="btn-edit" class="btn btn-secondary">← Edit Details</button>
+                <button id="btn-confirm" class="btn btn-success">Confirm & Submit ✓</button>
+            </div>
+        </div>
+
+        <div class="container" id="success-container" style="display:none;">
+            <div class="success-box">
+                <div class="success-icon">✔</div>
+                <h1>SUCCESS!</h1>
+                <p>Your data has been saved successfully.</p>
+                <button id="btn-new-form" class="btn btn-success">Submit Another</button>
+            </div>
+        </div>
+
+        <div class="loader" id="loader" style="display:none;"></div>
+    </main>
+    <footer>
+        Made by Earl Jensen Keith C. Jamon
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
